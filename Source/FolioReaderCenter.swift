@@ -251,7 +251,7 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
 
     func configureNavBar() {
         let navBackground = folioReader.isNight(self.readerConfig.nightModeNavBackground, self.readerConfig.daysModeNavBackground)
-        let tintColor = readerConfig.tintColor
+        let tintColor = folioReader.isNight(readerConfig.nightModeTintColor, readerConfig.tintColor)
         let navText = folioReader.isNight(UIColor.white, UIColor.black)
         let font = UIFont(name: "Avenir-Light", size: 17)!
         setTranslucentNavigation(color: navBackground, tintColor: tintColor, titleColor: navText, andFont: font)

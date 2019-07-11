@@ -99,6 +99,7 @@ open class FolioReaderConfig: NSObject {
 
     /// Base header custom TintColor
     open var tintColor = UIColor(rgba: "#6ACC50")
+    open var nightModeTintColor = UIColor(rgba: "#FFFFFF")
 
     /// Menu background color
     open var menuBackgroundColor = UIColor.white
