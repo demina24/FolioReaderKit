@@ -50,7 +50,7 @@ class FolioReaderQuoteShare: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setCloseButton(withConfiguration: self.readerConfig)
+        self.setCloseButton(withConfiguration: self.readerConfig, folioReader: folioReader)
         configureNavBar()
 
         let titleAttrs = [NSAttributedString.Key.foregroundColor: self.readerConfig.tintColor]

@@ -343,8 +343,8 @@ internal extension UIImage {
     ///
     /// - Parameter readerConfig: Current folio reader configuration.
     /// - Returns: Returns a colored image
-    func ignoreSystemTint(withConfiguration readerConfig: FolioReaderConfig) -> UIImage? {
-        return self.imageTintColor(readerConfig.tintColor)?.withRenderingMode(.alwaysOriginal)
+    func ignoreSystemTint(withConfiguration readerConfig: FolioReaderConfig, folioReader: FolioReader) -> UIImage? {
+        return self.imageTintColor(folioReader.isNight(readerConfig.nightModeTintColor, readerConfig.tintColor))?.withRenderingMode(.alwaysOriginal)
     }
     
     /**
@@ -430,8 +430,8 @@ internal extension UIImage {
 
 internal extension UIViewController {
     
-    func setCloseButton(withConfiguration readerConfig: FolioReaderConfig) {
-        let closeImage = UIImage(readerImageNamed: "icon-navbar-close")?.ignoreSystemTint(withConfiguration: readerConfig)
+    func setCloseButton(withConfiguration readerConfig: FolioReaderConfig, folioReader: FolioReader) {
+        let closeImage = UIImage(readerImageNamed: "icon-navbar-close")?.ignoreSystemTint(withConfiguration: readerConfig, folioReader: folioReader)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: closeImage, style: .plain, target: self, action: #selector(dismiss as () -> Void))
     }
     

@@ -39,7 +39,7 @@ class FolioReaderAddHighlightNote: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCloseButton(withConfiguration: readerConfig)
+        setCloseButton(withConfiguration: readerConfig, folioReader: folioReader)
         prepareScrollView()
         configureTextView()
         configureLabel()
