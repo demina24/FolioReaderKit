@@ -71,7 +71,7 @@ class FolioReaderChapterList: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kReuseCellIdentifier, for: indexPath) as! FolioReaderChapterListCell
 
-        cell.setup(withConfiguration: self.readerConfig)
+        cell.setup(withConfiguration: self.readerConfig, folioReader: folioReader)
         let tocReference = tocItems[(indexPath as NSIndexPath).row]
         let isSection = tocReference.children.count > 0
 
