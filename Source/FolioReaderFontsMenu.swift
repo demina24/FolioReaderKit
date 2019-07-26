@@ -78,6 +78,7 @@ class FolioReaderFontsMenu: UIViewController, SMSegmentViewDelegate, UIGestureRe
     var fontName : SMSegmentView?
     var selectedColor : UIColor
     var selectedNightModeColor : UIColor
+    
 
     init(folioReader: FolioReader, readerConfig: FolioReaderConfig) {
         self.readerConfig = readerConfig

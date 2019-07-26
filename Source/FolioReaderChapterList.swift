@@ -95,7 +95,9 @@ class FolioReaderChapterList: UITableViewController {
             let reference = self.book.spine.spineReferences[safe: currentPageNumber - 1],
             (tocReference.resource != nil) {
             let resource = reference.resource
-            cell.indexLabel?.textColor = (tocReference.resource == resource ? self.readerConfig.menuTextColorSelected : self.readerConfig.menuTextColor)
+            let selectedColour = folioReader.isNight(readerConfig.nightModeMenuTextColorSelected, readerConfig.menuTextColorSelected)
+            let unselectedColour = folioReader.isNight(readerConfig.nightModeMenuTextColor, readerConfig.menuTextColor)
+            cell.indexLabel?.textColor = (tocReference.resource == resource ? selectedColour : unselectedColour)
         }
 
         cell.layoutMargins = UIEdgeInsets.zero
