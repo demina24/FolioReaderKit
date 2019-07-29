@@ -488,9 +488,13 @@ func findHairlineImageViewUnderView(view: UIView?) -> UIImageView? {
 extension UINavigationController {
     
     open override var preferredStatusBarStyle : UIStatusBarStyle {
-        guard let viewController = visibleViewController else { return .default }
+        guard let viewController = visibleViewController else
+        {
+            return .default
+        }
         return viewController.preferredStatusBarStyle
     }
+    
     
     open override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         guard let viewController = visibleViewController else { return .portrait }
